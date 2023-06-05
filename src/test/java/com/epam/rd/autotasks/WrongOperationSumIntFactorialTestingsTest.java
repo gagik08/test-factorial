@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.platform.launcher.listeners.TestExecutionSummary;
 
 import static com.epam.rd.autotasks.Utils.assertFailuresAreAssertionErrors;
-import static com.epam.rd.autotasks.Utils.printDetails;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -57,8 +56,7 @@ class WrongOperationSumIntFactorialTestingsTest {
     }
 
     private static class WrongOperationSumIntFactorial extends Factorial {
-        @Override
-        public String factorial(final String n) {
+        public static String factorial(final String n) {
             int val = Integer.parseInt(n);
             return val <= 1 ? "1" : String.valueOf(val + Integer.parseInt(factorial(String.valueOf(val - 1))));
         }
@@ -66,7 +64,7 @@ class WrongOperationSumIntFactorialTestingsTest {
 
     static class WrongOperationSumIntFactorialBadInputTesting extends FactorialBadInputTesting {
         {
-            factorial = new WrongOperationSumIntFactorial();
+            WrongOperationSumIntFactorial factorial = new WrongOperationSumIntFactorial();
         }
     }
 
@@ -83,6 +81,8 @@ class WrongOperationSumIntFactorialTestingsTest {
     }
 
     static class WrongOperationSumIntFactorialMethodSourceParametrizedTesting extends FactorialMethodSourceParametrizedTesting {
+        private final WrongOperationSumIntFactorial factorial;
+
         {
             factorial = new WrongOperationSumIntFactorial();
         }

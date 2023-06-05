@@ -45,7 +45,7 @@ class FactorialTestingsTest {
     @Test
     void testMethodSourceParametrizedTesting() {
         final String testCases = FactorialMethodSourceParametrizedTesting.testCases()
-                .map(arg -> Arrays.stream(arg.get()).map(Object::toString).collect(joining(",")))
+                .map(arg -> Arrays.stream(new Class[]{arg.getClass()}).map(Object::toString).collect(joining(",")))
                 .collect(joining(";"));
         assertEquals("1,1;2,2;5,120", testCases, "You must specify (1,1; 2,2; 5,120) cases in FactorialMethodSourceParametrizedTesting.testCases() method");
 

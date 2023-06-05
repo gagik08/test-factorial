@@ -52,13 +52,14 @@ class LazyFactorialTestingsTest {
     }
 
     private static class LazyFactorial extends Factorial {
-        @Override
-        public String factorial(final String n) {
+        public static String factorial(final String n) {
             return n;
         }
     }
 
     static class LazyFactorialBadInputTesting extends FactorialBadInputTesting {
+        private final LazyFactorial factorial;
+
         {
             factorial = new LazyFactorial();
         }
@@ -77,6 +78,8 @@ class LazyFactorialTestingsTest {
     }
 
     static class LazyFactorialMethodSourceParametrizedTesting extends FactorialMethodSourceParametrizedTesting {
+        private final LazyFactorial factorial;
+
         {
             factorial = new LazyFactorial();
         }

@@ -1,30 +1,27 @@
 package com.epam.rd.autotasks;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-class FactorialBadInputTesting {
-
-    Factorial factorial = new Factorial();
-
+public class FactorialBadInputTesting {
     @Test
-    void testNullInput(){
-
+    public void testNullInput() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> Factorial.factorial(null));
     }
 
     @Test
-    void testNegativeInput(){
-
+    public void testNegativeInput() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> Factorial.factorial("-5"));
     }
 
     @Test
-    void testFractionalInput(){
-
+    public void testFractionalInput() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> Factorial.factorial("2.5"));
     }
 
     @Test
-    void testNonDigitalInput(){
-
+    public void testNonDigitalInput() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> Factorial.factorial("abc"));
     }
-
-
 }
+

@@ -56,14 +56,15 @@ class WrongOperationConcatIntFactorialTestingsTest {
     }
 
     private static class WrongOperationConcatIntFactorial extends Factorial {
-        @Override
-        public String factorial(final String n) {
+        public static String factorial(final String n) {
             int val = Integer.parseInt(n);
             return val <= 1 ? "1" : val + factorial(String.valueOf(val - 1));
         }
     }
 
     static class WrongOperationConcatIntFactorialBadInputTesting extends FactorialBadInputTesting {
+        private final WrongOperationConcatIntFactorial factorial;
+
         {
             factorial = new WrongOperationConcatIntFactorial();
         }
@@ -82,6 +83,8 @@ class WrongOperationConcatIntFactorialTestingsTest {
     }
 
     static class WrongOperationConcatIntFactorialMethodSourceParametrizedTesting extends FactorialMethodSourceParametrizedTesting {
+        private final WrongOperationConcatIntFactorial factorial;
+
         {
             factorial = new WrongOperationConcatIntFactorial();
         }
