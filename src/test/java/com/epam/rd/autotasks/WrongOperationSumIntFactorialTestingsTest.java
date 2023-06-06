@@ -63,7 +63,7 @@ class WrongOperationSumIntFactorialTestingsTest {
     }
 
     static class WrongOperationSumIntFactorialBadInputTesting extends FactorialBadInputTesting {
-        {
+        static {
             WrongOperationSumIntFactorial factorial = new WrongOperationSumIntFactorial();
         }
     }
@@ -81,10 +81,9 @@ class WrongOperationSumIntFactorialTestingsTest {
     }
 
     static class WrongOperationSumIntFactorialMethodSourceParametrizedTesting extends FactorialMethodSourceParametrizedTesting {
-        private final WrongOperationSumIntFactorial factorial;
 
-        {
-            factorial = new WrongOperationSumIntFactorial();
+        static {
+            WrongOperationSumIntFactorial factorial = new WrongOperationSumIntFactorial();
         }
     }
 }
