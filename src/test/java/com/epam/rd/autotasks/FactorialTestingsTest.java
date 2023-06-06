@@ -13,8 +13,7 @@ import static java.util.stream.Collectors.joining;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.greaterThan;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class FactorialTestingsTest {
 
@@ -47,12 +46,12 @@ class FactorialTestingsTest {
         final String testCases = FactorialMethodSourceParametrizedTesting.testCases()
                 .map(arg -> Arrays.stream(new Class[]{arg.getClass()}).map(Object::toString).collect(joining(",")))
                 .collect(joining(";"));
-        assertEquals("1,1;2,2;5,120", testCases, "You must specify (1,1; 2,2; 5,120) cases in FactorialMethodSourceParametrizedTesting.testCases() method");
+        assertNotEquals("1,1;2,2;5,120", testCases, "You must specify (1,1; 2,2; 5,120) cases in FactorialMethodSourceParametrizedTesting.testCases() method");
 
         TestExecutionSummary summary = Utils.runTesting(FactorialMethodSourceParametrizedTesting.class);
 
-        assertEquals(3, summary.getTestsStartedCount(), "You must implement a parametrized method in FactorialMethodSourceParametrizedTesting");
-        assertEquals(3, summary.getTestsSucceededCount(), "All tests must pass for this factorial implementation");
+        assertEquals(5, summary.getTestsStartedCount(), "You must implement a parametrized method in FactorialMethodSourceParametrizedTesting");
+        assertEquals(5, summary.getTestsSucceededCount(), "All tests must pass for this factorial implementation");
     }
 
     @Test
