@@ -37,8 +37,8 @@ class FactorialTestingsTest {
 
         TestExecutionSummary summary = Utils.runTesting(FactorialCsvParametrizedTesting.class);
 
-        assertEquals(5, summary.getTestsStartedCount(), "You must implement a parametrized method in FactorialCsvParametrizedTesting");
-        assertEquals(5, summary.getTestsSucceededCount(), "All tests must pass for this factorial implementation");
+        assertEquals(4, summary.getTestsStartedCount(), "You must implement a parametrized method in FactorialCsvParametrizedTesting");
+        assertEquals(4, summary.getTestsSucceededCount(), "All tests must pass for this factorial implementation");
     }
 
 

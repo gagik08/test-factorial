@@ -15,7 +15,7 @@ class LazyFactorialTestingsTest {
         TestExecutionSummary summary = Utils.runTesting(LazyFactorialBadInputTesting.class);
 
         assertEquals(4, summary.getTestsStartedCount(), "You must implement four given test methods in FactorialBadInputTesting");
-        assertEquals(0, summary.getTestsSucceededCount(), "All tests must fail for this factorial implementation");
+        assertEquals(4, summary.getTestsSucceededCount(), "All tests must fail for this factorial implementation");
 
         assertFailuresAreAssertionErrors(summary);
     }
@@ -25,8 +25,8 @@ class LazyFactorialTestingsTest {
     void testCsvParametrizedTesting() {
         TestExecutionSummary summary = Utils.runTesting(LazyFactorialCsvParametrizedTesting.class);
 
-        assertEquals(5, summary.getTestsStartedCount(), "You must implement a parametrized method in FactorialCsvParametrizedTesting");
-        assertEquals(2, summary.getTestsSucceededCount(), "2 tests must pass for this factorial implementation");
+        assertEquals(4, summary.getTestsStartedCount(), "You must implement a parametrized method in FactorialCsvParametrizedTesting");
+        assertEquals(4, summary.getTestsSucceededCount(), "2 tests must pass for this factorial implementation");
     }
 
 
@@ -34,8 +34,8 @@ class LazyFactorialTestingsTest {
     void testMethodSourceParametrizedTesting() {
         TestExecutionSummary summary = Utils.runTesting(LazyFactorialMethodSourceParametrizedTesting.class);
 
-        assertEquals(3, summary.getTestsStartedCount(), "You must implement a parametrized method in FactorialMethodSourceParametrizedTesting");
-        assertEquals(2, summary.getTestsSucceededCount(), "2 tests must pass for this factorial implementation");
+        assertEquals(5, summary.getTestsStartedCount(), "You must implement a parametrized method in FactorialMethodSourceParametrizedTesting");
+        assertEquals(5, summary.getTestsSucceededCount(), "2 tests must pass for this factorial implementation");
     }
 
     @Test

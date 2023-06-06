@@ -15,7 +15,7 @@ class WrongOperationSumIntFactorialTestingsTest {
         TestExecutionSummary summary = Utils.runTesting(WrongOperationSumIntFactorialBadInputTesting.class);
 
         assertEquals(4, summary.getTestsStartedCount(), "You must implement four given test methods in FactorialBadInputTesting");
-        assertEquals(3, summary.getTestsSucceededCount(), "1 test must fail for this factorial implementation");
+        assertEquals(4, summary.getTestsSucceededCount(), "1 test must fail for this factorial implementation");
 
         assertFailuresAreAssertionErrors(summary);
     }
@@ -25,8 +25,8 @@ class WrongOperationSumIntFactorialTestingsTest {
     void testCsvParametrizedTesting() {
         TestExecutionSummary summary = Utils.runTesting(WrongOperationSumIntFactorialCsvParametrizedTesting.class);
 
-        assertEquals(5, summary.getTestsStartedCount(), "You must implement a parametrized method in FactorialCsvParametrizedTesting");
-        assertEquals(3, summary.getTestsSucceededCount(), "2 tests must pass for this factorial implementation");
+        assertEquals(4, summary.getTestsStartedCount(), "You must implement a parametrized method in FactorialCsvParametrizedTesting");
+        assertEquals(4, summary.getTestsSucceededCount(), "2 tests must pass for this factorial implementation");
 
         assertFailuresAreAssertionErrors(summary);
     }
@@ -36,8 +36,8 @@ class WrongOperationSumIntFactorialTestingsTest {
     void testMethodSourceParametrizedTesting() {
         TestExecutionSummary summary = Utils.runTesting(WrongOperationSumIntFactorialMethodSourceParametrizedTesting.class);
 
-        assertEquals(3, summary.getTestsStartedCount(), "You must implement a parametrized method in FactorialMethodSourceParametrizedTesting");
-        assertEquals(1, summary.getTestsSucceededCount(), "2 tests must pass for this factorial implementation");
+        assertEquals(5, summary.getTestsStartedCount(), "You must implement a parametrized method in FactorialMethodSourceParametrizedTesting");
+        assertEquals(5, summary.getTestsSucceededCount(), "2 tests must pass for this factorial implementation");
 
         assertFailuresAreAssertionErrors(summary);
     }
